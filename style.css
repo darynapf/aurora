@@ -16,6 +16,18 @@ header {
   position: absolute;
   background: linear-gradient(180deg, rgba(51, 51, 51, 0.216) 14.31%, rgba(27, 27, 27, 0.112602) 58.6%, rgba(0, 0, 0, 2.4e-05) 100%);
   width: 100%; }
+  header:hover {
+    transition: all 0.8s;
+    background: white; }
+    header:hover a {
+      color: black;
+      fill: black; }
+    header:hover .top {
+      background: #F7F7F7; }
+    header:hover .top-menu__search input {
+      background: #f7f7f7 url(img/search.svg) no-repeat 97% 50%; }
+      header:hover .top-menu__search input::placeholder {
+        color: black; }
 
 .top {
   padding: 0px 24px;
@@ -31,7 +43,6 @@ header {
     letter-spacing: 0.8px; }
   .top div {
     margin-left: auto;
-    fill: black;
     font-style: normal;
     font-weight: 500;
     font-size: 11px;
@@ -43,6 +54,9 @@ header {
       font-weight: normal;
       font-size: 10px;
       line-height: 15px; }
+    .top div svg {
+      width: 8px;
+      fill: black; }
 
 .top-menu {
   display: flex;
@@ -53,16 +67,22 @@ header {
     padding-left: 24px;
     width: 20%; }
     .top-menu__logotype a {
+      display: flex;
+      height: auto;
       fill: white; }
+    .top-menu__logotype svg {
+      flex: 0 2 139px;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08); }
   .top-menu__search {
     display: flex;
-    align-items: center; }
+    align-items: center;
+    flex: 0 2 584px; }
     .top-menu__search input {
+      flex: 0 2 584px;
       outline: none;
       appearance: none;
       border: none;
       height: 48px;
-      width: 584px;
       border-radius: 3px;
       padding-left: 16px;
       background: rgba(247, 247, 247, 0.24) url(img/searchw.svg) no-repeat 97% 50%; }
@@ -104,13 +124,17 @@ header {
     line-height: 19px;
     letter-spacing: 1px;
     text-transform: uppercase; }
+    .menu a:hover {
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+      transition-duration: 0.2s; }
 
 .sliders {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 657px;
-  background: url(img/bg2.jpg) center top/cover no-repeat;
+  background: url(img/bg1.jpg) center top/cover no-repeat;
   transition: all 5s; }
   .sliders p {
     font-family: 'Poppins', sans-serif;
@@ -122,32 +146,34 @@ header {
 
 .content {
   font-family: 'Poppins', sans-serif;
-  display: flex;
   justify-content: center;
-  flex-direction: column;
-  gap: 14px;
   padding-top: 32px;
   padding-bottom: 32px;
   align-items: center; }
-  .content p {
-    font-weight: normal;
-    font-size: 12px;
-    line-height: 18px;
-    letter-spacing: 0.872727px;
-    width: 439px; }
+  .content__text {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 14px; }
+    .content__text p {
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 18px;
+      letter-spacing: 0.8px;
+      width: 439px; }
   .content__register-section {
     display: flex;
+    justify-content: center;
     align-items: center;
     gap: 12px; }
-    .content__register-section input:first-child {
+    .content__register-section input[type=email] {
+      flex: 0 1 334px;
       outline: none;
       border: 1px solid #E1E0E1;
       box-sizing: border-box;
       border-radius: 3px;
       height: 32px;
-      width: 334px;
       padding-left: 11px; }
-      .content__register-section input:first-child::placeholder {
+      .content__register-section input[type=email]::placeholder {
         font-weight: normal;
         font-size: 11px;
         line-height: 16px;
@@ -168,6 +194,11 @@ header {
   line-height: 20px;
   color: white;
   padding: 6px 17px; }
+  .button:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    transition-duration: 0.2s;
+    cursor: pointer; }
 
 footer {
   padding-top: 26px;
@@ -180,7 +211,7 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 6px; }
-    footer div a {
+    footer div .subtitle {
       font-weight: normal;
       font-size: 12px;
       line-height: 19px;
@@ -207,3 +238,105 @@ footer {
   letter-spacing: 0.5px;
   font-family: 'Poppins', sans-serif;
   padding-bottom: 14px; }
+
+.mobile,
+.footer-arrow,
+.footer-line {
+  display: none; }
+
+@media screen and (max-width: 900px) {
+  .top-menu {
+    gap: 10px; }
+
+  .sliders {
+    height: 480px; }
+    .sliders p {
+      font-size: 32px; } }
+@media screen and (max-width: 768px) {
+  header:hover {
+    transition: all 0.8s;
+    background: linear-gradient(180deg, rgba(51, 51, 51, 0.216) 14.31%, rgba(27, 27, 27, 0.112602) 58.6%, rgba(0, 0, 0, 2.4e-05) 100%); }
+    header:hover a {
+      color: white;
+      fill: white; }
+  header .mobile {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    padding-left: 16px; }
+  header .menu {
+    display: none; }
+  header .top {
+    display: none; }
+  header .top-menu__search {
+    display: none; }
+  header .top-menu__logotype {
+    width: 104px;
+    height: 20px; }
+  header .top-menu__basket {
+    padding-right: 16px; }
+    header .top-menu__basket p {
+      display: none; }
+
+  .sliders {
+    height: 480px; }
+    .sliders p {
+      display: none; }
+
+  footer {
+    padding: 0px 16px 16px 16px;
+    flex-direction: column;
+    gap: 0px; }
+    footer .footer__item.active .subtitle {
+      display: flex; }
+    footer .footer__item.active svg {
+      transform: rotate(90deg); }
+    footer div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 10px; }
+      footer div .subtitle {
+        display: none; }
+    footer .title {
+      display: flex;
+      align-items: center;
+      padding-top: 12px;
+      padding-bottom: 7px; }
+      footer .title.social-title {
+        display: none; }
+    footer .social-icons {
+      padding-top: 24px;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 24px; }
+    footer .footer-arrow {
+      display: block;
+      margin-left: auto; } }
+@media screen and (max-width: 360px) {
+  header .mobile {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    padding-left: 16px; }
+
+  .sliders {
+    height: 480px; }
+
+  .content {
+    padding-top: 24px;
+    padding-bottom: 24px; }
+    .content p {
+      width: 328px; }
+    .content__register-section {
+      gap: 8px; }
+      .content__register-section input:first-child {
+        width: 224px; }
+
+  .title {
+    padding-bottom: 5px; }
+
+  .footer-line {
+    display: flex;
+    padding-top: 0px; } }
