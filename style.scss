@@ -89,7 +89,6 @@
             }
             svg {
                 flex: 0 2 139px;
-                box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
             }
         }
         &__search {
@@ -286,8 +285,11 @@
     }
     
     .mobile,
+    .mobile-menu,
     .footer-arrow,
-    .footer-line {
+    .footer-line,
+    .close-icon,
+    .header-line {
         display: none;
     }
     
@@ -305,6 +307,55 @@
     }
     
     @media screen and (max-width:768px) {
+        .header-line {
+            margin: 0px;
+            display: flex;
+            width: 100%;
+            border: 1px solid #F7F7F7;
+        }
+        .footer-line {
+            margin: 0px;
+            display: flex;
+            width: 100%;
+            border: 1px solid #E1E0E1;
+        }
+        .mobile-menu {
+            z-index: 9;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 90%;
+            background: white;
+            &__item {
+                padding: 0px 16px;
+                display: flex;
+                align-items: center;
+                height: 48px;
+            }
+            a {
+                font-family: 'Poppins', sans-serif;
+                letter-spacing: 1.2px;
+                text-transform: uppercase;
+                font-weight: 600;
+                font-size: 11px;
+                line-height: 16px;
+            }
+            .header-arrow {
+                margin-left: auto;
+            }
+            .menu-logo {
+                display: flex;
+                padding: 24px 0px;
+                padding-left: 16px;
+                .close-icon {
+                    display: inline-block;
+                }
+                .mobile-logo {
+                    margin: auto;
+                }
+            }
+        }
         header {
             &:hover {
                 transition: all 0.8s;
@@ -355,7 +406,7 @@
             .footer__item.active .subtitle {
                 display: flex;
             }
-            .footer__item.active svg {
+            .footer__item.active img {
                 transform: rotate(90deg);
             }
             div {
@@ -370,8 +421,7 @@
             .title {
                 display: flex;
                 align-items: center;
-                padding-top: 12px;
-                padding-bottom: 7px;
+                padding: 13px 0px;
                 &.social-title {
                     display: none;
                 }
@@ -414,12 +464,5 @@
                     width: 224px;
                 }
             }
-        }
-        .title {
-            padding-bottom: 5px;
-        }
-        .footer-line {
-            display: flex;
-            padding-top: 0px;
         }
     }

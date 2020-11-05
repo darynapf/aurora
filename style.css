@@ -71,8 +71,7 @@ header {
       height: auto;
       fill: white; }
     .top-menu__logotype svg {
-      flex: 0 2 139px;
-      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08); }
+      flex: 0 2 139px; }
   .top-menu__search {
     display: flex;
     align-items: center;
@@ -240,8 +239,11 @@ footer {
   padding-bottom: 14px; }
 
 .mobile,
+.mobile-menu,
 .footer-arrow,
-.footer-line {
+.footer-line,
+.close-icon,
+.header-line {
   display: none; }
 
 @media screen and (max-width: 900px) {
@@ -253,6 +255,49 @@ footer {
     .sliders p {
       font-size: 32px; } }
 @media screen and (max-width: 768px) {
+  .header-line {
+    margin: 0px;
+    display: flex;
+    width: 100%;
+    border: 1px solid #F7F7F7; }
+
+  .footer-line {
+    margin: 0px;
+    display: flex;
+    width: 100%;
+    border: 1px solid #E1E0E1; }
+
+  .mobile-menu {
+    z-index: 9;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 90%;
+    background: white; }
+    .mobile-menu__item {
+      padding: 0px 16px;
+      display: flex;
+      align-items: center;
+      height: 48px; }
+    .mobile-menu a {
+      font-family: 'Poppins', sans-serif;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 11px;
+      line-height: 16px; }
+    .mobile-menu .header-arrow {
+      margin-left: auto; }
+    .mobile-menu .menu-logo {
+      display: flex;
+      padding: 24px 0px;
+      padding-left: 16px; }
+      .mobile-menu .menu-logo .close-icon {
+        display: inline-block; }
+      .mobile-menu .menu-logo .mobile-logo {
+        margin: auto; }
+
   header:hover {
     transition: all 0.8s;
     background: linear-gradient(180deg, rgba(51, 51, 51, 0.216) 14.31%, rgba(27, 27, 27, 0.112602) 58.6%, rgba(0, 0, 0, 2.4e-05) 100%); }
@@ -289,7 +334,7 @@ footer {
     gap: 0px; }
     footer .footer__item.active .subtitle {
       display: flex; }
-    footer .footer__item.active svg {
+    footer .footer__item.active img {
       transform: rotate(90deg); }
     footer div {
       display: flex;
@@ -301,8 +346,7 @@ footer {
     footer .title {
       display: flex;
       align-items: center;
-      padding-top: 12px;
-      padding-bottom: 7px; }
+      padding: 13px 0px; }
       footer .title.social-title {
         display: none; }
     footer .social-icons {
@@ -332,11 +376,4 @@ footer {
     .content__register-section {
       gap: 8px; }
       .content__register-section input:first-child {
-        width: 224px; }
-
-  .title {
-    padding-bottom: 5px; }
-
-  .footer-line {
-    display: flex;
-    padding-top: 0px; } }
+        width: 224px; } }
