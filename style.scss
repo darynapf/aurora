@@ -89,6 +89,11 @@
             }
             svg {
                 flex: 0 2 139px;
+                &:hover {
+                    -webkit-transform: scale(1.1);
+                    transform: scale(1.1);
+                    transition-duration: 0.2s;
+                }
             }
         }
         &__search {
@@ -130,6 +135,13 @@
                 line-height: 16px;
                 text-align: right;
                 letter-spacing: 1px;
+            }
+            svg {
+                &:hover {
+                    -webkit-transform: scale(1.1);
+                    transform: scale(1.1);
+                    transition-duration: 0.2s;
+                }
             }
         }
     }
@@ -275,6 +287,13 @@
             flex-direction: row;
             align-items: center;
             gap: 16px;
+            a {
+                &:hover {
+                    -webkit-transform: scale(1.1);
+                    transform: scale(1.1);
+                    transition-duration: 0.2s;
+                }
+            }
         }
     }
     
